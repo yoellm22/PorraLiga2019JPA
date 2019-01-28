@@ -6,6 +6,8 @@ package jpautil;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+//Para corregir un fallo en estas dos lineas tenemos que añadir en libraries las librerias:
+//Persistence(...) y Oracle
 
 /**
  *
