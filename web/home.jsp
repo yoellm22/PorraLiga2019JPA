@@ -28,6 +28,7 @@
             <h4>Login & Register</h4>
             <div class="row">
                 <!-- formulario name=registermodal op=register&login -->
+                
                 <form class="col s12" method="post" name="registermodal" action="Controller?op=register&login">
                 <div class="row">
                   <div class="input-field col s12">
