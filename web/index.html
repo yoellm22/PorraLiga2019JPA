@@ -10,24 +10,26 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/fontawesome.css">
-        <link rel="stylesheet" href="css/mycss.css">
+      <!--Import materialize.css-->
+      <!--Import Google Icon Font-->
+      <link href="css/fonts.css" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"/>
+      <link type="text/css" rel="stylesheet" href="css/mycss.css"/>
     </head>
     <body>
         <div class="container"> 
-            <div class="row bg-primary text-white p-3">
-                <div class="col-sm-3">
+            <div class="row card-panel blue darken-3">
+                <div class="col s3">
                     <img src="img/liga.png" alt="">
                 </div> 
-                <div class="col-sm-7"></div>
-                <div class="col-sm-2">
+                <div class="col s7"></div>
+                <div class="col s2">
                     <input class="btn-danger text-white p-2" type="submit" value="Login&Register">              
                 </div>
             </div>
-            <div class="cuerpo">
-                <form class="col-sm-6 offset-sm-3 mt-2 mb-2" action="#" method="post">
-                    <select class="w-100" id="selectJornada">
+            <div>
+                <form class="col s6" action="#" method="post">
+                    <select id="selectJornada">
                         <option>Seleccione jornada</option>
 <!-- Pruebas
                         <option>1</option>
@@ -36,14 +38,12 @@ and open the template in the editor.
 -->
                     </select>
                 </form>
-                <img class="col-12" src="img/bg.jpg">
+                <img class="responsive-img" src="img/bg.jpg">
             </div>
         </div>
             <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery-3.3.1.slim.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/myjs.js"></script>
+      <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/myjs.js"></script>
     </body>
 </html>
