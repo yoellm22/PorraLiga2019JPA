@@ -4,6 +4,7 @@
     Author     : JAVI
 --%>
 
+<%@page import="javax.persistence.EntityTransaction"%>
 <%@page import="entities.Usuario"%>
 <%@page import="entities.Porra"%>
 <%@page import="entities.Partido"%>
@@ -19,32 +20,58 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>  
+    <body>
         <%
         EntityManager em = (EntityManager)session.getAttribute("em");
         if(em==null){
             em = jpautil.JPAUtil.getEntityManagerFactory().createEntityManager();
             session.setAttribute("em", em);
         }
-        String op = "";
+        String op = null;
+        String sql = null;
         Query q = null;
         
         List<Jornada> listaJornadas;
-        List<Equipo> listaEquipos;
         List<Partido> listaPartidos;
-        List<Porra> listaPorras;
-        List<Usuario> listaUsuarios;
+        Jornada jornada;
+        Usuario usuario;
+        EntityTransaction transaction;
         
+        op = request.getParameter("op");
         
-        
+        //JoseC
+        RequestDispatcher dispatcher;
         
         if(op.equals("inicio")){
-            q.equals("SELECT jornada FROM jornada");
+            sql = ("SELECT j FROM Jornada j");
+            q.equals(em.createQuery(sql));
+            listaJornadas = (List<Jornada>) q.getResultList();
+            session.setAttribute("listaJornadas", listaJornadas);
             
+            sql = ("SELECT p FROM Partido p");
+            q.equals(em.createQuery(sql));
+            listaPartidos = (List<Partido>) q.getResultList();
+            session.setAttribute("listaPartidos", listaPartidos);
             
-        }
-        
-
+            //dispatcher = request.getRequestDispatcher("home.jsp");
+            //dispatcher.forward(request, response);
         %>
+        <!--<jsp:forward page="home.jsp"/>-->
+        <%
+            //hecho joseC
+        }else if(op.equals("Register&Login")){
+        
+            String dnilogin = request.getParameter("dnilogeado");
+            String nombrelogin = request.getParameter("nombrelogeado");
+            
+            dispatcher = request.getRequestDispatcher("home.jsp");
+            dispatcher.forward(request, response);
+        }
+        %>
+        <!--<jsp:forward page="index.html"/>-->
+        <%
+        }
+        %>
+        
     </body>
 </html>
