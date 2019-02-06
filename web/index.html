@@ -9,7 +9,7 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <!-- Bootstrap CSS -->
+        <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/fontawesome.css">
         <link rel="stylesheet" href="css/mycss.css">
@@ -26,8 +26,9 @@ and open the template in the editor.
                 </div>
             </div>
             <div class="cuerpo">
-                <form class="col-sm-6" action="#" method="post">
-                    <select class="align-self-center w-200" id="selectJornada">
+                <div class="col-sm-3"></div>
+                <form class="formulario" action="#" method="post">
+                    <select class="col-sm-6" id="selectJornada">
                         <option>Seleccione jornada</option>
 <!-- Pruebas
                         <option>1</option>
@@ -36,6 +37,7 @@ and open the template in the editor.
 -->
                     </select>
                 </form>
+                <div class="col-sm-3"></div>
                 <%
                  if (jornada != null){
                 %>
@@ -49,9 +51,9 @@ and open the template in the editor.
 			<div class="bg-light">
                             <button class="btn-danger col-sm-1">i</button>
                             <img class="col-sm-1" src="<%=match.getLocal_shield()%>">
-                            <h2><span class="col-sm-2 text-center"><!--<%=match.getLocal_team()%>--> Real Madrid</span>
+                            <h3><span class="col-sm-2 text-center"><!--<%=match.getLocal_team()%>--> Real Madrid</span>
                             <span class="col-sm-4 text-center"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
-                            <span class="col-sm-2 text-center"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h2>
+                            <span class="col-sm-2 text-center"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
                             <img class="card-img-top col-sm-1" src="<%=match.getAway_shield()%>">
                             <button class="btn-danger col-sm-1"> APUESTA</button>
                         </div>
