@@ -10,52 +10,53 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/fontawesome.css">
+        <link rel="stylesheet" href="css/materialize.min.css">
+        <link rel="stylesheet" href="css/fonts.css">
         <link rel="stylesheet" href="css/mycss.css">
     </head>
     <body>
         <div class="container"> 
-            <div class="row bg-primary text-white p-3">
-                <div class="col-sm-3">
+            <div class="row light-blue white-text l8">
+                <div class="col s3">
                     <img src="img/liga.png" alt="">
                 </div> 
-                <div class="col-sm-7"></div>
-                <div class="col-sm-2">
-                    <input class="btn-danger text-white p-2" type="submit" value="Login&Register">              
+                <div class="col s6"></div>
+                <div class="col s3">
+                    <input class="red white-text btn m" type="submit" value="Login&Register">              
                 </div>
             </div>
             <div class="cuerpo">
-                <div class="col-sm-3"></div>
-                <form class="formulario" action="#" method="post">
-                    <select class="col-sm-6" id="selectJornada">
-                        <option>Seleccione jornada</option>
-<!-- Pruebas
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
--->
-                    </select>
-                </form>
-                <div class="col-sm-3"></div>
+                <div class="row">
+                    <div class="col s3"></div>
+                    <form class="col s6" action="#" method="">
+                        <select id="selectJornada">
+                            <option>Seleccione jornada</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </form>
+                    <div class="col s3"></div>
+                </div>
+                
                 <%
                  if (jornada != null){
                 %>
-                <img class="col-sm-12" src="img/bg.jpg" alt="">
+                <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">
                 <% 
                 }else{
                 %>
                 <div>  
                     <%for (Match match: matches.getMatch()){ %>
 
-			<div class="bg-light">
-                            <button class="btn-danger col-sm-1">i</button>
-                            <img class="col-sm-1" src="<%=match.getLocal_shield()%>">
-                            <h3><span class="col-sm-2 text-center"><!--<%=match.getLocal_team()%>--> Real Madrid</span>
-                            <span class="col-sm-4 text-center"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
-                            <span class="col-sm-2 text-center"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
-                            <img class="card-img-top col-sm-1" src="<%=match.getAway_shield()%>">
-                            <button class="btn-danger col-sm-1"> APUESTA</button>
+			<div class="row grey">
+                            <button class="btn-small red white-text col s1">i</button>
+                            <img class="col s1" src="<%=match.getLocal_shield()%>">
+                            <h3><span class="col s2 center-align"><!--<%=match.getLocal_team()%>--> Real Madrid</span>
+                            <span class="col s4 center-align"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
+                            <span class="col s2 center-align"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
+                            <img class="col s1" src="<%=match.getAway_shield()%>">
+                            <button class="btn-small red white-text col s1"> APUESTA</button>
                         </div>
                   <%} %>
  
@@ -68,9 +69,8 @@ and open the template in the editor.
         </div>
             <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="js/jquery-3.3.1.slim.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <script src="js/materialize.min.js"></script>
         <script src="js/myjs.js"></script>
     </body>
 </html>
