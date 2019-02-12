@@ -20,7 +20,60 @@
     </head>
 
     <body>
-      
+        <div class="container"> 
+            <div class="row light-blue white-text l8">
+                <div class="col s3">
+                    <img src="img/liga.png" alt="">
+                </div> 
+                <div class="col s6"></div>
+                <div class="col s3">
+                    <input class="red white-text btn m" type="submit" value="Login&Register">              
+                </div>
+            </div>
+            <div class="cuerpo">
+                <div class="row">
+                    <div class="col s3"></div>
+                    <form>
+                        <select id="selectJornada">
+                            <option>Seleccione jornada</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </form>
+                    <div class="col s3"></div>
+                </div>
+                
+                <%
+                 if (jornada != null){
+                %>
+                <div class="row">
+                 <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">    
+                </div>
+                <% 
+                }else{
+                %>
+                <div>  
+                    <%for (Match match: matches.getMatch()){ %>
+
+			<div class="row grey">
+                            <button class="btn-small red white-text col s1">i</button>
+                            <img class="col s1" src="<%=match.getLocal_shield()%>">
+                            <h3><span class="col s2 center-align"><!--<%=match.getLocal_team()%>--> Real Madrid</span>
+                            <span class="col s4 center-align"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
+                            <span class="col s2 center-align"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
+                            <img class="col s1" src="<%=match.getAway_shield()%>">
+                            <button class="btn-small red white-text col s1"> APUESTA</button>
+                        </div>
+                  <%} %>
+ 
+                </div>
+               <%
+                }
+                %>
+
+            </div>
+        </div>
          <!-- Modal Structure login and register -->
          
          <div id="modal1" class="modal">
