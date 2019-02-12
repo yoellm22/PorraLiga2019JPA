@@ -28,7 +28,7 @@ and open the template in the editor.
             <div class="cuerpo">
                 <div class="row">
                     <div class="col s3"></div>
-                    <form class="col s6" action="#" method="">
+                    <form>
                         <select id="selectJornada">
                             <option>Seleccione jornada</option>
                             <option>1</option>
@@ -42,7 +42,9 @@ and open the template in the editor.
                 <%
                  if (jornada != null){
                 %>
-                <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">
+                <div class="row">
+                 <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">    
+                </div>
                 <% 
                 }else{
                 %>
