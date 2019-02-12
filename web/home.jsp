@@ -4,6 +4,9 @@
     Author     : Yoel
 --%>
 
+<%@page import="entities.Partido"%>
+<%@page import="java.util.List"%>
+<%@page import="entities.Usuario"%>
 <%@page import="entities.Jornada"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,7 +23,14 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <%
-        Jornada jornada = (Jornada)session.getAttribute("listaJornadas");       
+        Jornada jornada = (Jornada)session.getAttribute("listaJornadas"); 
+        List<Partido> partidos = (List<Partido>) session.getAttribute("partidos");
+        
+        Usuario user = (Usuario) session.getAttribute("usuario");
+      
+        List jornadas = (List) session.getAttribute("jornadas");
+        
+        
     %>
     <body>
         <div class="container"> 
@@ -57,12 +67,12 @@
                 }else{
                 %>
                 <div>  
-                    <%for (Match match: matches.getMatch()){ %>
+                    <%for (Partido partido: partidos){ %>
 
 			<div class="row grey">
                             <button class="btn-small red white-text col s1">i</button>
-                            <img class="col s1" src="<%=match.getLocal_shield()%>">
-                            <h3><span class="col s2 center-align"><!--<%=match.getLocal_team()%>--> Real Madrid</span>
+                            <img class="col s1" src="<%=partido.get%>">
+                            <h3><span class="col s2 center-align"> <%=partidoo.get%> Real Madrid</span></h3>
                             <span class="col s4 center-align"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
                             <span class="col s2 center-align"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
                             <img class="col s1" src="<%=match.getAway_shield()%>">

@@ -115,6 +115,30 @@ public class Controller extends HttpServlet {
             dispatcher = request.getRequestDispatcher("home.jsp");
             dispatcher.forward(request, response);
             
-        } 
+        } else if (op.equals("infoapuestas")){
+            short idpartido = Short.valueOf(request.getParameter("idPartido"));
+            TypedQuery<InfoApuesta> queryprueba = em.createQuery("select p.goleslocal,p.golesvisitante,count(p) from Porra p where p.partido.idpartido = :idpartido group by p.goleslocal,p.golesvisitante", InfoApuesta.class);
+            queryprueba.setParameter("idpartido", idpartido);
+            List<InfoApuesta> results = queryprueba.getResultList();
+            
+            Partido partido = em.find(Partido.class, idpartido);
+            String nombrepartido = partido.getLocal() + " - " + partido.getVisitante();
+            
+            request.setAttribute("infoapuestas", results);
+            request.setAttribute("nombrepartido", nombrepartido);
+            dispatcher = request.getRequestDispatcher("apuestas.jsp");
+            dispatcher.forward(request, response);
+        }
+        
+    }
+    
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, java.io.IOException {
+        processRequest(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, java.io.IOException {
+        processRequest(request, response);
     }
 }
