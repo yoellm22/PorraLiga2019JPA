@@ -5,6 +5,7 @@
 --%>
 
 <%@page import="entities.Partido"%>
+<%@page import="entities.Equipo"%>
 <%@page import="java.util.List"%>
 <%@page import="entities.Usuario"%>
 <%@page import="entities.Jornada"%>
@@ -72,11 +73,12 @@
                     %>
 			<div class="row grey">
                             <button class="btn-small red white-text col s1">i</button>                     
-                            <img class="col s1" src="">
-                            <h3><span class="col s2 center-align"><%=partido.getLocal().getNombre()%> - <%=partido.getVisitante().getNombre()%></span></h3>
-                            <span class="col s4 center-align"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
-                            <span class="col s2 center-align"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
-                            <img class="col s1" src="<%=match.getAway_shield()%>">
+                            <img class="col s1" src="<%=//aqui va la foto del escudo del local%>">
+                            <%--Aqui no se porque da error pero es asi, lo he comprobado y esta es la estructura --%>
+                            <h3><span class="col s2 center-align"> <%=partido.getLocal().getNombre()%>  </span></h3>
+                            <span class="col s4 center-align"> <!--<%=partido.getGoleslocal()%>-->  <!-- <%=partido.getGolesvisitante() %>--></span>
+                            <span class="col s2 center-align"><!--<%=partido.getVisitante().getNombre()%> --></span></h3>
+                        <img class="col s1" src="<%=//aqui va la foto del escudo del visitante%>">
                             <button class="btn-small red white-text col s1"> APUESTA</button>
                         </div>
                   <%} %>
