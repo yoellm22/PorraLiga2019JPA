@@ -23,9 +23,9 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <%
-        Jornada jornada = (Jornada)session.getAttribute("listaJornadas"); 
-        List<Partido> partidos = (List<Partido>) session.getAttribute("partidos");
         
+        List<Partido> partidos = (List<Partido>) session.getAttribute("partidos");
+        Partido partido;
         Usuario user = (Usuario) session.getAttribute("usuario");
       
         List jornadas = (List) session.getAttribute("jornadas");
@@ -58,7 +58,7 @@
                 </div>
                 
                 <%
-                 if (jornada != null){
+                 if(jornadas != null){
                 %>
                 <div class="row">
                  <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">    
@@ -67,12 +67,13 @@
                 }else{
                 %>
                 <div>  
-                    <%for (Partido partido: partidos){ %>
-
+                    <%for (int i=0; i<partidos.size();i++){
+                        partido = partidos.get(i);
+                    %>
 			<div class="row grey">
-                            <button class="btn-small red white-text col s1">i</button>
-                            <img class="col s1" src="<%=partido.get%>">
-                            <h3><span class="col s2 center-align"> <%=partidoo.get%> Real Madrid</span></h3>
+                            <button class="btn-small red white-text col s1">i</button>                     
+                            <img class="col s1" src="">
+                            <h3><span class="col s2 center-align"><%=partido.getLocal().getNombre()%> - <%=partido.getVisitante().getNombre()%></span></h3>
                             <span class="col s4 center-align"><!--<%=match.getLocal_team()%>--> 3 - <!-- <%=match.getAway_score() %>-->0</span>
                             <span class="col s2 center-align"><!--<%=match.getLocal_score() %>- <%=match.getAway_score() %>-->Alaves</span></h3>
                             <img class="col s1" src="<%=match.getAway_shield()%>">
