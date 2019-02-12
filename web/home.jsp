@@ -54,22 +54,7 @@
           </div>
           
         </div>
-  
-
-<<<<<<< HEAD
-  
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/myjs.js"></script>
     
-  </body>
-=======
-        
-        
-        
-        
-        
       <!--MODAL APUESTA --> 
       <div id="modal1" class="modal">
             <div class="modal-content">
@@ -103,6 +88,5 @@
       <script type="text/javascript" src="js/materialize.min.js"></script>
       <script type="text/javascript" src="js/myjs.js"></script>
     </body>
->>>>>>> origin/develop
-  </html>
+</html>
         
