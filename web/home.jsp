@@ -102,7 +102,7 @@
 			<div class="row grey marg">
                             <div class="col m2 center-align ma">
                                  <% if (user != null) {%>
-                                 <input type="submit" data-target="modalinfo" class="btn-small red white-text modal-trigger" value="i"/>
+                                 <input type="button" data-target="modalinfo" class="btn-small red white-text modal-trigger" value="i"/>
                                 <% }%>
                             </div>                     
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
