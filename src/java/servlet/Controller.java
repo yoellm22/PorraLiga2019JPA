@@ -61,16 +61,15 @@ public class Controller extends HttpServlet {
             dispatcher.forward(request, response);
             
         }else if(op.equals("jornada")){
-            sql = "select p from Partido p where p.idjornada.idjornada = :idjornada";
+            sql = "select p from Partido p where p.idjornada.idjornada = :id";
             
-            String idjornada = request.getParameter("idJornada");
+            Short id = Short.valueOf(request.getParameter("idJornada"));
             query = em.createQuery(sql);
-            query.setParameter("idjornada", idjornada);
-            List<Partido> partidos = query.getResultList();                       
+            query.setParameter("id", id);
+            List<Partido> partidos = query.getResultList();  
             session.setAttribute("partidos",partidos);
-           
-            
-            dispatcher = request.getRequestDispatcher("home.jsp");
+
+            dispatcher = request.getRequestDispatcher("home.jsp"); 
             dispatcher.forward(request, response);
         }       
 
