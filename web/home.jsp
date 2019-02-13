@@ -73,12 +73,11 @@
                     %>
 			<div class="row grey">
                             <button class="btn-small red white-text col s1">i</button>                     
-                            <img class="col s1" src="<%=//aqui va la foto del escudo del local%>">
-                            <%--Aqui no se porque da error pero es asi, lo he comprobado y esta es la estructura --%>
-                            <h3><span class="col s2 center-align"> <%=partido.getLocal().getNombre()%>  </span></h3>
-                            <span class="col s4 center-align"> <!--<%=partido.getGoleslocal()%>-->  <!-- <%=partido.getGolesvisitante() %>--></span>
-                            <span class="col s2 center-align"><!--<%=partido.getVisitante().getNombre()%> --></span></h3>
-                        <img class="col s1" src="<%=//aqui va la foto del escudo del visitante%>">
+                            <img class="col s1" src="<%=partido.getLocal().getEscudo()%>">
+                            <h3><span class="col s2 center-align"> - </span>
+                            <span class="col s4 center-align"><%=partido.getLocal().getNombre()%></span>
+                            <span class="col s2 center-align"><%=partido.getVisitante().getNombre()%></span></h3>
+                            <img class="col s1" src="<%=partido.getVisitante().getNombre()%>">
                             <button class="btn-small red white-text col s1"> APUESTA</button>
                         </div>
                   <%} %>
