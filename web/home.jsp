@@ -24,8 +24,13 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <%
+        List<Partido> partidos;
+        if(String.valueOf(request.getParameter("op")).equals("inicio")){
+            partidos=null;
+        }else{
+            partidos = (List<Partido>)session.getAttribute("partidos");
+        }
         
-        List<Partido> partidos = (List<Partido>)session.getAttribute("partidos");
         Partido partido;
         Usuario user = (Usuario) session.getAttribute("usuario");
       
@@ -62,7 +67,7 @@
                 </div>
                 
                 <%
-                 if(partidos.isEmpty()){
+                 if(partidos == null){
                 %>
                 <div class="row">
                     <div class="col m12">
@@ -76,14 +81,19 @@
                     <%for (int i=0; i<partidos.size();i++){
                         partido = partidos.get(i);
                     %>  
-			<div class="row grey">
-                            <button class="btn-small red white-text col m1">i</button>                     
+			<div class="row grey marg">
+                            <div class="col m2 center-align ma">
+                                <button class="btn-small red white-text">i</button>
+                            </div>                     
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
-                            <h3>
-                            <span class="col m4 center-align"><%=partido.getLocal().getNombre()%></span>
-                            <span class="col m4 center-align"><%=partido.getVisitante().getNombre()%></span></h3>
-                            <img class="col m1" src="<%=partido.getVisitante().getNombre()%>">
-                            <button class="btn-small red white-text col m1"> APUESTA</button>
+                            <h4>
+                            <span class="col m3 center-align"><%=partido.getLocal().getNombre()%></span>
+                            <span class="col m3 center-align"><%=partido.getVisitante().getNombre()%></span></h4>
+                            <img class="col m1" src="<%=partido.getVisitante().getEscudo()%>">
+                            <div class="col m2 center-align ma">
+                                <button class="btn-small red white-text">Apuesta</button>
+                            </div>
+                            
                         </div>
                   <%} %>
  
