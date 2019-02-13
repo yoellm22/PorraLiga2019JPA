@@ -46,7 +46,13 @@
                 </div> 
                 <div class="col s6"></div>
                 <div class="col s3">
-                    <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">              
+                    <% if(user == null){%>
+                        <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">
+                        <%}else{%>
+                        <form action="Controller?op=CierreSesion" method="post">
+                            <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
+                        </form>
+                    <%}%>
                 </div>
             </div>
             <div class="cuerpo">
