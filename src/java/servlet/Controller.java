@@ -82,12 +82,15 @@ public class Controller extends HttpServlet {
         if (op.equals("login")) {
             String nombre = (String) request.getParameter("nombre");
             String dni = (String) request.getParameter("dni"); 
-            user = em.find(Usuario.class, dni);
+            
+            user=em.find(Usuario.class, dni);
             
             if (user == null){
                 Usuario nuevoUsuario = new Usuario(dni);
                 nuevoUsuario.setNombre(nombre);
+                em.getTransaction().begin();
                 em.persist(nuevoUsuario);
+                em.getTransaction().commit();
                 user = nuevoUsuario;
             }
             

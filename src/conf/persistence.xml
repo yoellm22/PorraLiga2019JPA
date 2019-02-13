@@ -10,9 +10,9 @@
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@80.28.158.14:1521:oradai"/>
-      <property name="javax.persistence.jdbc.user" value="s2dam23"/>
+      <property name="javax.persistence.jdbc.user" value="s2dam13"/>
       <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-      <property name="javax.persistence.jdbc.password" value="s2dam23"/>
+      <property name="javax.persistence.jdbc.password" value="s2dam13"/>
     </properties>
   </persistence-unit>
 </persistence>
