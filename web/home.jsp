@@ -96,7 +96,13 @@
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
                             <h4>
                             <span class="col m3 center-align"><%=partido.getLocal().getNombre()%></span>
-                            <span class="col m3 center-align"><%=partido.getVisitante().getNombre()%></span></h4>
+                            </h4>
+                            <h5>
+                            <span class="col m1 center-align"><%=partido.getGoleslocal()%> - <%=partido.getGolesvisitante()%></span>
+                            </h5>
+                            <h4>
+                            <span class="col m3 center-align"><%=partido.getVisitante().getNombre()%></span>
+                            </h4>
                             <img class="col m1" src="<%=partido.getVisitante().getEscudo()%>">
                             <div class="col m2 center-align ma">
                                 <% if (user != null) {%>
