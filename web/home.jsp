@@ -50,7 +50,7 @@
                         <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">
                         <%}else{%>
                         <form action="Controller?op=CierreSesion" method="post">
-                            <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
+                            <p>Welcome, <%=user.getNombre()%></p><input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
                         </form>
                     <%}%>
                 </div>
@@ -121,16 +121,16 @@
             <div class="row">
                 <!-- formulario name=registermodal op=register&login -->
                 
-                <form class="col s12" method="post" name="registermodal" action="Controller?op=Register&Login">
+                <form class="col s12" method="post" name="registermodal" action="Controller?op=login">
                 <div class="row">
                   <div class="input-field col s12">
                     <i class="material-icons prefix">featured_play_list</i>
-                    <input name="dnilogeado" id="icon_prefix" type="text" class="validate">
+                    <input name="dni" id="icon_prefix" type="text" class="validate">
                     <label for="icon_prefix">DNI</label>
                   </div>
                   <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input name="nombrelogeado" id="icon_telephone" type="text" class="validate">
+                    <input name="nombre" id="icon_telephone" type="text" class="validate">
                     <label for="icon_telephone">Nombre</label>
                   </div>
                 
