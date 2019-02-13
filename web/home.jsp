@@ -25,12 +25,12 @@
     </head>
     <%
         
-        List<Partido> partidos = (List<Partido>) session.getAttribute("partidos");
+        List<Partido> partidos = (List<Partido>)session.getAttribute("partidos");
         Partido partido;
         Usuario user = (Usuario) session.getAttribute("usuario");
       
-        List jornadas = (List) session.getAttribute("jornadas");
-        
+        List jornadas = (List)session.getAttribute("jornadas");
+        Jornada jornada=null;
         
     %>
     <body>
@@ -46,23 +46,27 @@
             </div>
             <div class="cuerpo">
                 <div class="row">
-                    <div class="col s3"></div>
-                    <form>
-                        <select id="selectJornada">
-                            <option>Seleccione jornada</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
+                    <div class="col m4 offset-m4">
+                    <form method="post">
+                            <select name ="idJornada" onchange='window.location="Controller?op=jornada"'>
+                                <option value="" disabled selected>Elige una opcion</option>
+                                <% for(int i=0;i<jornadas.size();i++){ 
+                                jornada = (Jornada)jornadas.get(i);
+                                %>
+                                <option value="<%=jornada.getIdjornada()%>"><%=jornada.getNombre() %>(<%=jornada.getFechainicio() %> - <%=jornada.getFechafin() %>)</option>
+                                <%}%>
+                            </select>
+                        <label>Selecciona jornada</label>
+                  
                     </form>
-                    <div class="col s3"></div>
+                     </div>
                 </div>
                 
                 <%
-                 if(jornadas != null){
+                 if(partidos == null){
                 %>
                 <div class="row">
-                 <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">    
+                    <img class="materialboxed" width="100%" src="img/bg.jpg" alt="">    
                 </div>
                 <% 
                 }else{
