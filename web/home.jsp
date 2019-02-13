@@ -83,7 +83,9 @@
                     %>  
 			<div class="row grey marg">
                             <div class="col m2 center-align ma">
+                                 <% if (user != null) {%>
                                 <button class="btn-small red white-text">i</button>
+                                <% }%>
                             </div>                     
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
                             <h4>
@@ -91,7 +93,9 @@
                             <span class="col m3 center-align"><%=partido.getVisitante().getNombre()%></span></h4>
                             <img class="col m1" src="<%=partido.getVisitante().getEscudo()%>">
                             <div class="col m2 center-align ma">
+                                <% if (user != null) {%>
                                 <button class="btn-small red white-text">Apuesta</button>
+                                <% }%>
                             </div>
                             
                         </div>
@@ -150,6 +154,7 @@
                         <input class="blue-text text-darken-2" placeholder="Goles Visitantes" id="gol_visitante" type="text" class="validate">                         
                     </div>
                     <div class="col m12 mar">
+                            
                             <a class=" waves-effect waves-light" type="submit" name="action">Apostar
                                     <i class="material-icons right">send</i>
                             </a>
