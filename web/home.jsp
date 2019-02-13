@@ -106,7 +106,7 @@
                             <img class="col m1" src="<%=partido.getVisitante().getEscudo()%>">
                             <div class="col m2 center-align ma">
                                 <% if (user != null) {%>
-                                <button datatarget="modalapuesta" class="btn-small red white-text">Apuesta</button>
+                                <button datatarget="modalapuesta" class="btn-small red white-text btn modal-trigger">Apuesta</button>
                                 <% }%>
                             </div>
                             
@@ -184,7 +184,7 @@
             </div>
       </div>
       
-       <!--MODAL APUESTA --> 
+       <!--MODAL INFO --> 
       <div id="modalinfo" class="modal">
             <div class="modal-content">
                 <div class="row">
