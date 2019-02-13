@@ -47,7 +47,7 @@
                 <div class="col s6"></div>
                 <div class="col s3">
                     <% if(user == null){%>
-                        <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">
+                        <input data-target="modalregister" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">
                         <%}else{%>
                         <form action="Controller?op=logout" method="post">
                             <p>Welcome, <%=user.getNombre()%></p><input class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
@@ -106,7 +106,7 @@
                             <img class="col m1" src="<%=partido.getVisitante().getEscudo()%>">
                             <div class="col m2 center-align ma">
                                 <% if (user != null) {%>
-                                <button class="btn-small red white-text">Apuesta</button>
+                                <button datatarget="modalapuesta" class="btn-small red white-text">Apuesta</button>
                                 <% }%>
                             </div>
                             
@@ -121,7 +121,7 @@
         </div>
          <!-- Modal Structure login and register -->
          
-         <div id="modal1" class="modal">
+         <div id="modalregister" class="modal">
           <div class="modal-content">
             <h4>Login & Register</h4>
             <div class="row">
@@ -154,16 +154,17 @@
         </div>
     
       <!--MODAL APUESTA --> 
-      <div id="modal1" class="modal">
+      <div id="modalapuesta" class="modal">
             <div class="modal-content">
                 <div class="row">
+                    <form class="col s12" method="post" name="apuestamodal" action="Controller?op=apostar">
                     <div class="col m12"><h4>Apuesta</h4></div>
                     <div class="col m12 center-align" id="TitleModal"><h4>Levante - Eibar</h4></div>
                     <div class="col m6">
-                        <input placeholder="Goles Local" id="gol_local" type="text" class="validate">                       
+                        <input name="gLocal" placeholder="Goles Local" id="gol_local" type="text" class="validate">                       
                     </div>
                     <div class="col m6">
-                        <input class="blue-text text-darken-2" placeholder="Goles Visitantes" id="gol_visitante" type="text" class="validate">                         
+                        <input name="gVisitante" class="blue-text text-darken-2" placeholder="Goles Visitantes" id="gol_visitante" type="text" class="validate">                         
                     </div>
                     <div class="col m12 mar">
                             
@@ -174,6 +175,7 @@
                                     <i class="material-icons right">send</i>
                             </a>
                     </div>
+                    </form>
                 </div>
 
             </div>
