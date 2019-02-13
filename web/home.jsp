@@ -47,8 +47,8 @@
             <div class="cuerpo">
                 <div class="row">
                     <div class="col m4 offset-m4">
-                    <form method="post" action="Controller?op=jornada">
-                            <select name="idJornada">
+                    <form action="Controller?op=jornada" name="jornada" method="post">
+                            <select name="idJornada" onChange="this.form.submit()">
                                 <option value="" disabled selected>Elige una opcion</option>
                                 <% for(int i=0;i<jornadas.size();i++){ 
                                 jornada = (Jornada)jornadas.get(i);
@@ -62,7 +62,7 @@
                 </div>
                 
                 <%
-                 if(partidos == null){
+                 if(partidos.isEmpty()){
                 %>
                 <div class="row">
                     <div class="col m12">
@@ -72,18 +72,16 @@
                 <% 
                 }else{
                 %>
-                <div class="row">  
-                    <h1><%=partidos.size()%></h1>
+                <div class="row">                    
                     <%for (int i=0; i<partidos.size();i++){
                         partido = partidos.get(i);
-                    %>
-                        <%=partido.toString()%>
+                    %>  
 			<div class="row grey">
                             <button class="btn-small red white-text col m1">i</button>                     
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
-                            <h3><span class="col m2 center-align"> - </span>
+                            <h3>
                             <span class="col m4 center-align"><%=partido.getLocal().getNombre()%></span>
-                            <span class="col m2 center-align"><%=partido.getVisitante().getNombre()%></span></h3>
+                            <span class="col m4 center-align"><%=partido.getVisitante().getNombre()%></span></h3>
                             <img class="col m1" src="<%=partido.getVisitante().getNombre()%>">
                             <button class="btn-small red white-text col m1"> APUESTA</button>
                         </div>
