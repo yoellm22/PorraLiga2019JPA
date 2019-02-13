@@ -36,21 +36,23 @@
       
         List jornadas = (List)session.getAttribute("jornadas");
         Jornada jornada=null;
+        String number=request.getParameter("idJornada");
+  	
         
     %>
     <body>
         <div class="container"> 
             <div class="row light-blue white-text l8">
-                <div class="col s3">
+                <div class="col m4 left-align">
                     <img src="img/liga.png" alt="">
                 </div> 
-                <div class="col s6"></div>
-                <div class="col s3">
+                <div class="col m4"></div>
+                <div class="col m4 right-align">
                     <% if(user == null){%>
                         <input data-target="modalregister" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">
                         <%}else{%>
                         <form action="Controller?op=logout" method="post">
-                            <p>Welcome, <%=user.getNombre()%></p><input class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
+                            <p>Welcome, <%=user.getNombre()%> <input class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion"></p>
                         </form>
                     <%}%>
                 </div>
@@ -60,7 +62,7 @@
                     <div class="col m4 offset-m4">
                     <form action="Controller?op=jornada" name="jornada" method="post">
                             <select name="idJornada" onChange="this.form.submit()">
-                                <option value="" disabled selected>Elige una opcion</option>
+                                <option value="0" disable selected>Elige una opcion</option>
                                 <% for(int i=0;i<jornadas.size();i++){ 
                                 jornada = (Jornada)jornadas.get(i);
                                 %>
@@ -71,7 +73,17 @@
                     </form>
                      </div>
                 </div>
-                
+                <script language="javascript" type="text/javascript">	
+                    function poncombo(combo,valor)
+                    {
+                    for(i=0;i<combo.options.length;i++)
+                    if (combo.options[i].value==valor)
+			combo.options[i].selected=true;
+                       }
+                </script>
+                <script type="text/javascript">	
+		poncombo(document.jornada.idJornada,'<%=number%>');
+		</script>
                 <%
                  if(partidos == null){
                 %>

@@ -67,8 +67,13 @@ public class Controller extends HttpServlet {
             query = em.createQuery(sql);
             query.setParameter("id", id);
             List<Partido> partidos = query.getResultList();  
-            session.setAttribute("partidos",partidos);
-
+           
+            if(id==0){
+                 session.setAttribute("partidos",null);
+            }else{
+                 session.setAttribute("partidos",partidos);
+            }
+            
             dispatcher = request.getRequestDispatcher("home.jsp"); 
             dispatcher.forward(request, response);
         }       
