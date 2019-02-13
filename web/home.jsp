@@ -103,20 +103,21 @@
                             <div class="col m2 center-align ma">
                                  <% if (user != null) {%>
                                  <input data-target="modalinfo" class="btn-small red white-text" value="i"/>
+
                                 <% }%>
                             </div>                     
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
                             <h4>
-                            <span class="col m3 center-align"><%=partido.getLocal().getNombre()%></span>
+                            <span class="col m2 center-align"><%=partido.getLocal().getNombre()%></span>
                             </h4>
                             <h5>
                             <span class="col m1 center-align"><%=partido.getGoleslocal()%> - <%=partido.getGolesvisitante()%></span>
                             </h5>
                             <h4>
-                            <span class="col m3 center-align"><%=partido.getVisitante().getNombre()%></span>
+                            <span class="col m2 center-align"><%=partido.getVisitante().getNombre()%></span>
                             </h4>
                             <img class="col m1" src="<%=partido.getVisitante().getEscudo()%>">
-                            <div class="col m2 center-align ma">
+                            <div class="col m3 center-align ma">
                                 <% if (user != null) {%>
                                 <input data-target="modalapuesta" class="btn-small red white-text btn modal-trigger" value="Apuesta"/>
                                 <% }%>
