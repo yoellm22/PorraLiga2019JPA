@@ -41,7 +41,7 @@
                 </div> 
                 <div class="col s6"></div>
                 <div class="col s3">
-                    <input class="red white-text btn m" type="submit" value="Login&Register">              
+                    <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">              
                 </div>
             </div>
             <div class="cuerpo">
