@@ -49,8 +49,8 @@
                     <% if(user == null){%>
                         <input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Login&Register">
                         <%}else{%>
-                        <form action="Controller?op=CierreSesion" method="post">
-                            <p>Welcome, <%=user.getNombre()%></p><input data-target="modal1" class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
+                        <form action="Controller?op=logout" method="post">
+                            <p>Welcome, <%=user.getNombre()%></p><input class="red white-text btn m btn modal-trigger" type="submit" value="Cerrar sesion">
                         </form>
                     <%}%>
                 </div>
