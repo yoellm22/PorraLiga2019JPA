@@ -102,8 +102,7 @@
 			<div class="row grey marg">
                             <div class="col m2 center-align ma">
                                  <% if (user != null) {%>
-                                 <input data-target="modalinfo" class="btn-small red white-text" value="i"/>
-
+                                 <input type="submit" data-target="modalinfo" class="btn-small red white-text modal-trigger" value="i"/>
                                 <% }%>
                             </div>                     
                             <img class="col m1" src="<%=partido.getLocal().getEscudo()%>">
@@ -206,17 +205,8 @@
                     <div class="col m6">
                         <input placeholder="Goles Local" id="gol_local" type="text" class="validate">                       
                     </div>
-                    <div class="col m6">
-                        <input class="blue-text text-darken-2" placeholder="Goles Visitantes" id="gol_visitante" type="text" class="validate">                         
-                    </div>
-                    <div class="col m12 mar">
-                            
-                            <a class=" waves-effect waves-light" type="submit" name="action">Apostar
-                                    <i class="material-icons right">send</i>
-                            </a>
-                            <a class=" waves-effect waves-light" name="action">Cancelar
-                                    <i class="material-icons right">send</i>
-                            </a>
+                    <div>
+                        
                     </div>
                 </div>
 
